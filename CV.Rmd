@@ -1,0 +1,224 @@
+---
+title: "Curriculum Vitae"
+description: |
+  Andrew H. Karaba
+date: December 12, 2021
+output: distill::distill_article
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+# DEMOGRAPHIC AND PERSONAL INFORMATION:\
+
+### Current Appointments\ 
+2021-present	Assistant Professor of Medicine in the Division of Infectious Diseases – Johns Hopkins University\
+
+### Education and Training\
+2003-2007	B.A. with honors in Integrated Science, Biology, and Chemistry, Northwestern University/Evanston, IL\
+2007-2013	PhD. in Virology (Thesis advisor: Richard Longnecker, Ph.D.), Northwestern University/Chicago, IL\
+2007-2015	M.D. Feinberg School of Medicine, Northwestern University/Chicago, IL, Suma cum laude\
+2015-2017	Osler Medical Training Program, Johns Hopkins Hospital/Baltimore, MD\
+2017-2020	Infectious Diseases Fellowship, Johns Hopkins University/Baltimore, MD\ 
+
+
+# PUBLICATIONS:\ 
+## Original Research\
+1. Tuma J, Tonzani S, Schatz GC, Karaba AH, Lewis FD. Structure and Electronic Spectra of DNA Mini-hairpins with G n:C nStems. J Phys Chem B. 2007;111: 13101–13106. doi:10.1021/jp072303m\
+
+2. Mccullagh M, Zhang L, Karaba AH, Zhu H, Schatz GC, Lewis FD. Effect of Loop Distortion on the Stability and Structural Dynamics of DNA Hairpin and Dumbbell Conjugates. J Phys Chem B. 2008;112: 11415–11421. doi:10.1021/jp802378a\
+
+3. Karaba AH, Kopp SJ, Longnecker R. Herpesvirus entry mediator and nectin-1 mediate herpes simplex virus 1 infection of the murine cornea. Journal of Virology. 2011;85: 10041–10047. doi:10.1128/JVI.05445-11\
+
+4. Karaba AH, Cohen LK, Glaubach T, Kopp SJ, Reichek JL, Yoon HH, et al. Longitudinal Characterization of Herpes Simplex Virus (HSV) Isolates Acquired From Different Sites in an Immune-Compromised Child: A New HSV Thymidine Kinase Mutation Associated With Resistance. Journal of the Pediatric Infectious Diseases Society. 2012. doi:10.1093/jpids/pis009\
+
+5. Karaba AH, Kopp SJ, Longnecker R. Herpesvirus entry mediator is a serotype specific determinant of pathogenesis in ocular herpes. Proc Natl Acad Sci USA. 2012. doi:10.1073/pnas.1216967109\
+
+6. Kopp SJ, Karaba AH, Cohen LK, Banisadr G, Miller RJ, Muller WJ. Pathogenesis of neonatal herpes simplex 2 disease in a mouse model is dependent on entry receptor expression and route of inoculation. Journal of Virology. 2012. doi:10.1128/JVI.01849-12\
+
+7. Kopp SJ, Ranaivo HR, Wilcox DR, Karaba AH, Wainwright MS, Muller WJ. Herpes simplex virus serotype and entry receptor availability alter CNS disease in a mouse model of neonatal HSV. Pediatr Res. 2014;76: 528–534. doi:10.1038/pr.2014.135\
+
+8. Edwards RG, Kopp SJ, Karaba AH, Wilcox DR, Longnecker R. Herpesvirus entry mediator on radiation-resistant cell lineages promotes ocular herpes simplex virus 1 pathogenesis in an entry-independent manner. mBio. 2015;6: e01532-15. doi:10.1128/mBio.01532-15\
+
+9. Karaba AH, Blair PW, Martin K, Saheed MO, Carroll KC, Borowitz MJ. The Effects of a Systemwide Diagnostic Stewardship Change on West Nile Virus Disease Ordering Practices. Open Forum Infect Dis. 2019;6. doi:10.1093/ofid/ofz488\
+
+10. Gladstone DE, Kim BS, Mooney K, Karaba AH, D’Alessio FR. Regulatory T Cells for Treating Patients With COVID-19 and Acute Respiratory Distress Syndrome: Two Case Reports. Annals of Internal Medicine. 2020. doi:10.7326/L20-0681\
+
+11. Ignatius EH, Wang K, Karaba A, Robinson M, Avery RK, Blair P, et al. Tocilizumab for the treatment of COVID-19 among hospitalized patients: A matched retrospective cohort analysis. Open Forum Infectious Diseases. 2020. doi:10.1093/ofid/ofaa598\
+
+12. Karaba AH, Figueroa A, Massaccesi G, Botto S, DeFilippis VR, Cox AL. Herpes simplex virus type 1 inflammasome activation in proinflammatory human macrophages is dependent on NLRP3, ASC, and caspase-1. PLOS ONE. 2020;15: e0229570. doi:10.1371/journal.pone.0229570\
+
+13. Karaba AH, Zhou W, Hsieh LL, Figueroa A, Massaccesi G, Rothman RE, et al. Differential Cytokine Signatures of SARS-CoV-2 and Influenza Infection Highlight Key Differences in Pathobiology. Clinical Infectious Diseases. 2021. doi:10.1093/cid/ciab376\
+
+14. Karaba AH, Figueroa A, Werbel WA, Dioverti MV, Steinke SM, Ray SC, et al. Interleukin-18 and tumor necrosis factor-α are elevated in solid organ transplant recipients with possible cytomegalovirus end-organ disease. Transplant Infectious Disease. 2021;n/a. doi:10.1111/tid.13682\
+
+15. Peart Akindele N, Kouo T, Karaba AH, Gordon O, Fenstermacher KZJ, Beaudry J, et al. Distinct Cytokine and Chemokine Dysregulation in Hospitalized Children with Acute COVID-19 and Multisystem Inflammatory Syndrome with Similar Levels of Nasopharyngeal SARS-CoV-2 Shedding. The Journal of Infectious Diseases. 2021. doi:10.1093/infdis/jiab285\
+
+16. Ruddy JA, Boyarsky BJ, Werbel WA, Bailey JR, Karaba AH, Garonzik-Wang JM, et al. Safety and antibody response to the first dose of SARS-CoV-2 messenger RNA vaccine in persons with HIV. AIDS. 2021. doi:10.1097/QAD.0000000000002945\
+
+17. Woldemeskel BA, Karaba AH, Garliss CC, Beck EJ, Wang KH, Laeyendecker O, et al. The BNT162b2 mRNA Vaccine Elicits Robust Humoral and Cellular Immune Responses in People Living with HIV. Clinical Infectious Diseases 2021. https://doi.org/10.1093/cid/ciab648.\
+
+18. Ruddy JA, Boyarsky BJ, Bailey JR, Karaba AH, Garonzik-Wang JM, Segev DL, et al. Safety and antibody response to two-dose SARS-CoV-2 messenger RNA vaccination in persons with HIV. AIDS 2021.\
+
+## Review Articles\
+1. Cihakova D, Streiff MB, Menez SP, Chen TK, Gilotra NA, Michos ED, Karaba AH et al. High-value laboratory testing for hospitalized COVID-19 patients: a review. Future Virology 2021. https://doi.org/10.2217/fvl-2020-0316.\
+
+## Editorials\
+1. Queen J, Karaba S, Albin J, Karaba A, Howard-Anderson J, Skinner N, et al. The Time is Now: A Call for Renewed Support of Infectious Disease Physician-Scientist Trainees in the COVID-19 Era. The Journal of Infectious Diseases. 2021. doi:10.1093/infdis/jiab162\
+
+## Book Chapters, Monographs\
+1. Karaba, AH Clinical Fellowship and Postdoctoral Training. In: Eisenberg, M.J., Cox, A.L., eds. The Essential MD-PhD Guide.  McGraw Hill, 2021; chapter 25.\
+
+2. Zhou, T.W., Karaba, AH Choosing the Right Residency, Applying, and Interviewing. In: Eisenberg, M.J., Cox, A.L., eds. The Essential MD-PhD Guide.  McGraw Hill, 2021; chapter 22.\
+
+# FUNDING\
+
+2009-2010	Training Program in Viral Replication Fellowship (T32 AI060523)\
+2011		Infectious Disease Society of America Medical Scholars Fellowship\
+2012-2013	Northwestern University Clinical and Translational Sciences Fellowship (TL1 5TL1RR025739)\
+2018-2020	Research Training in Microbial Diseases (T32 AI007291-28)\
+2019		Physician Scientist Training Program Microgrant (Johns Hopkins University)\
+2020-present	Johns Hopkins Excellence in Pathogenesis and Immunity Center for SARS-CoV-2 (JH-EPICS)
+(1U54CA260492-01) Role: Co-I\
+2021		JHU SOM Institute for Clinical and Translational Research Clinician Scientist Award\
+2021-present	Modulation of Herpes Simplex Virus Pathogenesis by Leucine Rich Repeat Kinase 2 (K08 AI156021) Role: PI\
+2021-present	COVID Protection After Transplant (CPAT) Multicenter Adaptive Trial (U01AI138897-04S1) Role: Co-I\
+
+
+# CLINICAL ACTIVITIES\
+## Medical, other state/government licensure\
+8/7/2018	Maryland\
+
+## Boards, other specialty certification\ 
+8/2018	Internal Medicine\
+12/2020	Infectious Disease\
+
+# EDUCATIONAL ACTIVITIES\ 
+ 
+## Teaching\  	
+### Classroom instruction\  		
+2009-2013	Medical Student Tutor - Feinberg School of Medicine, Chicago, IL\
+
+2009-2011	Teaching Assistant, Medical Microbiology Laboratory - Feinberg School of Medicine, Chicago, IL\
+
+2020	“Approach to Gram Positive Bacteremia” - Lecture to the Osler Residency\
+
+### Clinical instruction\ 
+2015-2017	Internal Medicine Resident\
+  Taught 3rd and 4th year medical students on their internal medicine clerkships at JHU
+
+2017-2018	Infectious Diseases Fellow\
+  Taught 3rd and 4th year medical students from JHU and other institutions rotating at JHU on their Infectious Diseases electives
+
+2019-2021	Medical Student Preceptor\
+  Taught 2nd year medical students at JHU in clinical skills as part of the Transition to the Wards Course
+
+2021-present  Lecturer for MedStar Residency\
+  Taught topics on infectious diseases in immunosuppressed patients to internal medicine residents in the MedStar residency program in Baltimore, MD\
+
+### CME Instruction\
+Lecturer, Johns Hopkins Division of Infectious Diseases Grand Rounds Case Presentations:
+7/25/2017	VZV Encephalitis in a Dialysis Patient\
+11/6/2017	Disseminated Histoplasmosis in a Returning Traveler\
+12/11/2017	Listeria Meningitis in a Multiple Myeloma Patient\
+3/5/2018	Stomach Cancer Presenting as a Liver Abscess\
+3/13/2018	Mondor’s Disease in a Lactating Woman\
+7/10/2018	Pneumococcal Meningitis in a Woman on Steroids\
+7/24/2018	Disseminated Kaposi’s Sarcoma as an initial presentation of HIV\
+
+5/16/2019	A Case of Disseminated Histoplasmosis - 13th Annual Infectious Diseases Update for Primary Care and Hospital Medicine\
+
+## Mentoring\ 
+### Pre-doctoral Advisees/Mentees\ 
+9/2018-8/2020	Alexis Figueroa, doctoral diversity program scholar, currently a Johns Hopkins MSTP student\
+7/2021-present Tihitina Aytenfisu, doctoral diversity program scholar\
+
+# RESEARCH ACTIVITIES\
+
+2005-2007 		Undergraduate Research\
+Northwestern University, Department of Chemistry\
+Advisor: Fred Lewis, PhD\
+Structural and Thermodynamic Properties of DNA\
+ 
+2009-2013		Ph.D. Student\
+Northwestern University, Department of Microbiology-Immunology\
+Advisor: Richard Longnecker, PhD\
+Pathogenesis of HSV-1 Ocular Infections\
+
+2018-2020		Infectious Diseases Fellow\
+			Johns Hopkins University\
+			Advisor: Andrea Cox, MD, PhD\
+			Inflammasome Regulation in Viral Infections\
+
+2021-present		Assistant Professor\
+			Johns Hopkins University\
+			Mentor: Andrea Cox, MD, PhD\
+			Innate Immune Activation in Viral Infections\
+
+			
+# SYSTEM INNOVATION AND QUALITY IMPROVEMENT ACTIVITIES\
+
+System Innovation and Quality Improvement efforts within JHMI:\
+2017	WNV testing Diagnostics QI project at JHMI\
+Helped eliminate CSF PCR assay in favor of CDC recommended MAC-ELISA\
+
+2020-present	Faculty Editor for Chapter on Antibiotics for the Osler Residency Survival Guide\
+
+
+# ORGANIZATIONAL ACTIVITIES 
+
+## Institutional Administrative Appointments\ 
+2015-2017	Member of the Feedback Committee for the Osler Medical Training Program\
+2018-2019	Co-Founder and Vice-chair of Communications of The Clinical Fellows Council\
+2019-2020	Vice-chair of Finance of The Clinical Fellows Council\
+2020-2021	Co-writer/COVID-19 Inflammatory Markers Working Group\
+2020-present	Contributor/COVID-19 Treatment Guidance Working Group\
+
+## Journal Peer Review Activities\   
+2020		Journal of Clinical Investigation\
+2020		Immunological Research\
+2021		PLoS Pathogens\
+2021		American Journal of Transplantation\
+2021		Transplantation\
+
+# RECOGNITION\
+
+## Awards, Honors\ 
+2007	Phi Beta Kappa\
+2014	Alpha Omega Alpha\
+2015	Graduated Summa Cum Laude and Magna Cum Laude in Scientia Experimentali from Northwestern University, Feinberg School of Medicine\
+2015	Department of Medicine Chairman’s Award, Northwestern University, Feinberg School of Medicine\
+2015	John P. Phair Award for excellence in the infectious disease clerkship, Northwestern University, Feinberg School of Medicine\
+2018	Distinguished Teaching Society Member, Johns Hopkins University School of Medicine\
+2019	IDWeek Trainee Travel Grant\
+2020	Infectious Disease Community of Practice Travel Reimbursement Grant for American Transplant Congress\
+2020	IDWeek Trainee Travel Grant\
+
+
+## Invited Talks\
+### JHMI\
+2018	“The Role of Herpesvirus Entry Mediator and Nectin-1 in Ocular Herpes Simplex Virus Infections” Viral Oncology Group Meeting at JHU\
+
+2019	“Disseminated Histoplasmosis in a Returning Traveler” Case Presentation at Baltimore “Pus Club” Meeting\
+
+2020	“IL-6 in COVID-19: A Laboratory Perspective” JHU Infectious Diseases Division Grand Rounds\
+
+
+### National
+2012	“Exploring HSV Receptors in the Cornea”\
+Chicago Area Virology Association Annual Meeting. Chicago, IL.\
+
+2021	“SARS-CoV-2 Vaccine Safety and Immunogenicity in Solid Organ Transplant Recipients”\
+National Institutes of Health Clinical and Translational Serology Task Force Round Table\
+
+
+# OTHER PROFESSIONAL ACCOMPLISHMENTS\ 
+## Oral/Podium Presentations\
+2011	“HVEM and Nectin-1 Mediate Infection of the Murine Cornea” International Herpesvirus Workshop. Gdansk, Poland.\
+
+2012	“HSV-1 and HSV-2 Have Different Receptor Requirements for Infection of the Murine Cornea” International Herpesvirus Workshop, Calgary, Canada.\
+
+
+
+

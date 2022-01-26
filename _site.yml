@@ -3,6 +3,7 @@ title: "Andrew H. Karaba's Website"
 description: |
   Andrew Karaba's Website
 output_dir: "_site"
+google_analytics: "UA-218214701-1"
 navbar:
   right:
     - text: "Home"

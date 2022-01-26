@@ -34,6 +34,7 @@ Vaccines remain our best tool to prevent infection and disease.  Unfortunately, 
       
 # Selected Publications
 
+- Kumar A, Stavrakis G, **Karaba AH**. Herpesviruses and Inflammasomes: One Sensor Does Not Fit All. Szpara ML, Prasad VR, editors. mBio. 2022; e01737-21. doi:10.1128/mbio.01737-21
 - **Karaba AH**, Zhu X, Benner SE, Akinde O, Eby Y, Wang KH, et al. Higher Proinflammatory Cytokines are Associated with Increased Antibody Titer After a Third Dose of SARS-CoV-2 Vaccine in Solid Organ Transplant Recipients. Transplantation *In Press*.\
 - **Karaba AH**, Zhu X, Liang T, Wang KH, Rittenhouse AG, Akinde O, et al. A Third Dose of SARS-CoV-2 Vaccine Increases Neutralizing Antibodies Against Variants of Concern in Solid Organ Transplant Recipients. medRxiv. 2021; 2021.08.11.21261914. doi:10.1101/2021.08.11.21261914
 - Ruddy JA, Boyarsky BJ, Bailey JR, **Karaba AH**, Garonzik-Wang JM, Segev DL, et al. Safety and antibody response to two-dose SARS-CoV-2 messenger RNA vaccination in persons with HIV. AIDS. 2021. doi: 10.1097/QAD.0000000000003017
@@ -56,6 +57,6 @@ Vaccines remain our best tool to prevent infection and disease.  Unfortunately, 
 [Complete Bibliography](https://www.ncbi.nlm.nih.gov/myncbi/andrew.karaba.1/bibliography/public/)
 
 -----------------------------------------------
-<font size="2"> © 2021 all rights reserved.<br>
+<font size="2"> © 2022 all rights reserved.<br>
 This website was made using the Distill package in R.<br>
 Learn more about using Distill for R Markdown at <https://rstudio.github.io/distill></font>

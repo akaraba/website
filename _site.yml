@@ -10,5 +10,5 @@ navbar:
     - text: "About"
       href: about.html
     - text: "CV"
-      href: CV.html
+      href: CVs/AHK_CV_Website.pdf
 output: distill::distill_article

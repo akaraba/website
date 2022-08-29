@@ -27,15 +27,15 @@ The innate immune response is the body’s first defense against pathogens.  My 
 
 Vaccines remain our best tool to prevent infection and disease.  Unfortunately, people with immunocompromising conditions (bone marrow or organ transplant recipients) often do not respond as well as immunocompetent individuals to vaccines.  This leaves them vulnerable to infection. My lab works with other investigators to understand the vaccine response in these immunocompromised patients and how we can improve that response to protect them from disease.
 
-### [**Open Research Positions**](https://jobs.jhu.edu/job/Baltimore-Research-Technologist-MD-21212/778125600/)
+### [**Open Research Positions**]()
       
 # Transplant/Oncology Infectious Diseases
   My primary clinical focus is on preventing and treating infections in immunocompromised patients.  This includes bone marrow transplant recipients, solid organ transplant recipients, and patients undergoing chemotherapy treatment for cancer.  I see patients at Johns Hopkins Hospital and affiliated clinics.  I have a particular interest in novel treatments for viral infections in this population.
       
 # Selected Publications
-
+- **Karaba AH**, Zhou W, Li S, Aytenfisu TY, Johnston TS, Akinde O, et al. Impact of Seasonal Coronavirus Antibodies on SARS-CoV-2 Vaccine Responses in Solid Organ Transplant Recipients. Clinical Infectious Diseases. 2022; ciac652. doi:10.1093/cid/ciac652
 - Kumar A, Stavrakis G, **Karaba AH**. Herpesviruses and Inflammasomes: One Sensor Does Not Fit All. Szpara ML, Prasad VR, editors. mBio. 2022; e01737-21. doi:10.1128/mbio.01737-21
-- **Karaba AH**, Zhu X, Benner SE, Akinde O, Eby Y, Wang KH, et al. Higher Proinflammatory Cytokines are Associated with Increased Antibody Titer After a Third Dose of SARS-CoV-2 Vaccine in Solid Organ Transplant Recipients. Transplantation *In Press*.\
+- **Karaba AH**, Zhu X, Benner SE, Akinde O, Eby Y, Wang KH, et al. Higher Proinflammatory Cytokines Are Associated With Increased Antibody Titer After a Third Dose of SARS-CoV-2 Vaccine in Solid Organ Transplant Recipients. Transplantation. 2022;106: 835–841. doi:10.1097/TP.0000000000004057
 - **Karaba AH**, Zhu X, Liang T, Wang KH, Rittenhouse AG, Akinde O, et al. A Third Dose of SARS-CoV-2 Vaccine Increases Neutralizing Antibodies Against Variants of Concern in Solid Organ Transplant Recipients. American J Transplantation. 2022; ajt.16933. doi:10.1111/ajt.16933\
 - Ruddy JA, Boyarsky BJ, Bailey JR, **Karaba AH**, Garonzik-Wang JM, Segev DL, et al. Safety and antibody response to two-dose SARS-CoV-2 messenger RNA vaccination in persons with HIV. AIDS. 2021. doi: 10.1097/QAD.0000000000003017
 - Woldemeskel BA, **Karaba AH**, Garliss CC, Beck EJ, Wang KH, Laeyendecker O, et al. The BNT162b2 mRNA Vaccine Elicits Robust Humoral and Cellular Immune Responses in People Living with HIV. Clinical Infectious Diseases. 2021. doi:10.1093/cid/ciab648

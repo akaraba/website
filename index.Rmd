@@ -27,7 +27,7 @@ The innate immune response is the body’s first defense against pathogens.  My 
 
 Vaccines remain our best tool to prevent infection and disease.  Unfortunately, people with immunocompromising conditions (bone marrow or organ transplant recipients) often do not respond as well as immunocompetent individuals to vaccines.  This leaves them vulnerable to infection. My lab works with other investigators to understand the vaccine response in these immunocompromised patients and how we can improve that response to protect them from disease.
 
-### [**Open Research Positions**]()
+### [**Open Research Positions**](**)
       
 # Transplant/Oncology Infectious Diseases
   My primary clinical focus is on preventing and treating infections in immunocompromised patients.  This includes bone marrow transplant recipients, solid organ transplant recipients, and patients undergoing chemotherapy treatment for cancer.  I see patients at Johns Hopkins Hospital and affiliated clinics.  I have a particular interest in novel treatments for viral infections in this population.

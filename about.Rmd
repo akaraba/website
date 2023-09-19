@@ -14,15 +14,16 @@ output:
   postcards::trestles
 ---
 
-I am a practicing physician scientist at Johns Hopkins studying the immune response to viruses in the viral hepatitis center and taking care of immunocompromised patients as part of the transplant/oncology infectious disease team. When not in the lab or hospital I am probably brewing beer, birding, cooking, or playing outside with my sons and wife.
+I am a practicing physician scientist at Johns Hopkins studying the immune response to viruses and taking care of immunocompromised patients as part of the transplant/oncology infectious disease team. When not in the lab or hospital I am probably brewing beer, birding, cooking, or playing outside with my sons and wife.
 
 **Current Lab Members:**\
-Tihitina Aytenfisu -- DDP Student\
-T. Scott Johnston -- Research Technologist
+Bryce Easterly -- Research Technologist
 
-**Prior Lab Members/Mentees and Current Position:**\
+**Prior Lab Members/Mentees and Subsequent Position:**\
 Alex Figueroa -- JHU MSTP Student\
-Ayush Kumar -- Vet Student @ Ontario Veterinary College
+Ayush Kumar -- Vet Student\
+Tihitina Aytenfisu -- JHU MSTP Student\
+T. Scott Johnston -- Dental Student
 
 
 

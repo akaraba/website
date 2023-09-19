@@ -50,16 +50,17 @@ pre.numberSource code > span > a:first-child::before
   }
 pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
 div.sourceCode
-  {   }
+  { color: #00769e; background-color: #f1f3f5; }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
+code span { color: #00769e; } /* Normal */
 code span.al { color: #ad0000; } /* Alert */
 code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { } /* Attribute */
+code span.at { color: #657422; } /* Attribute */
 code span.bn { color: #ad0000; } /* BaseN */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
+code span.cf { color: #00769e; } /* ControlFlow */
 code span.ch { color: #20794d; } /* Char */
 code span.cn { color: #8f5902; } /* Constant */
 code span.co { color: #5e5e5e; } /* Comment */
@@ -73,9 +74,9 @@ code span.fl { color: #ad0000; } /* Float */
 code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
 code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
+code span.kw { color: #00769e; } /* Keyword */
 code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
+code span.ot { color: #00769e; } /* Other */
 code span.pp { color: #ad0000; } /* Preprocessor */
 code span.sc { color: #5e5e5e; } /* SpecialChar */
 code span.ss { color: #20794d; } /* SpecialString */
@@ -787,6 +788,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   d-article table.gt_table td,
   d-article table.gt_table th {
     border-bottom: none;
+    font-size: 100%;
   }
 
   .html-widget {
@@ -1028,10 +1030,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     position: relative;
     margin-bottom: 2.5em;
     margin-top: 1.5em;
-  }
-
-  .figure img {
-    width: 100%;
   }
 
   .figure .caption {
@@ -1863,9 +1861,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
       // hoverable references
       $('span.citation[data-cites]').each(function() {
+        const citeChild = $(this).children()[0]
+        // Do not process if @xyz has been used without escaping and without bibliography activated
+        // https://github.com/rstudio/distill/issues/466
+        if (citeChild === undefined) return true
+
+        if (citeChild.nodeName == "D-FOOTNOTE") {
+          var fn = citeChild
+          $(this).html(fn.shadowRoot.querySelector("sup"))
+          $(this).id = fn.id
+          fn.remove()
+        }
         var refs = $(this).attr('data-cites').split(" ");
         var refHtml = refs.map(function(ref) {
-          return "<p>" + $('#ref-' + ref).html() + "</p>";
+          // Could use CSS.escape too here, we insure backward compatibility in navigator
+          return "<p>" + $('div[id="ref-' + ref + '"]').html() + "</p>";
         }).join("\n");
         window.tippy(this, {
           allowHTML: true,
@@ -1877,6 +1887,31 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
           placement: 'bottom-start'
         });
       });
+
+      // fix footnotes in tables (#411)
+      // replacing broken distill.pub feature
+      $('table d-footnote').each(function() {
+        // we replace internal showAtNode methode which is triggered when hovering a footnote
+        this.hoverBox.showAtNode = function(node) {
+          // ported from https://github.com/distillpub/template/pull/105/files
+          calcOffset = function(elem) {
+              let x = elem.offsetLeft;
+              let y = elem.offsetTop;
+              // Traverse upwards until an `absolute` element is found or `elem`
+              // becomes null.
+              while (elem = elem.offsetParent && elem.style.position != 'absolute') {
+                  x += elem.offsetLeft;
+                  y += elem.offsetTop;
+              }
+
+              return { left: x, top: y };
+          }
+          // https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/offsetTop
+          const bbox = node.getBoundingClientRect();
+          const offset = calcOffset(node);
+          this.show([offset.left + bbox.width, offset.top + bbox.height]);
+        }
+      })
 
       // clear polling timer
       clearInterval(tid);
@@ -1976,6 +2011,8 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // mark non-body figures created by knitr chunks as 100% width
     $('.layout-chunk').each(function(i, val) {
       var figures = $(this).find('img, .html-widget');
+      // ignore leaflet img layers (#106)
+      figures = figures.filter(':not(img[class*="leaflet"])')
       if ($(this).attr('data-layout') !== "l-body") {
         figures.css('width', '100%');
       } else {
@@ -1998,7 +2035,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
     // get rid of index.html references in header
     if (window.location.protocol !== "file:") {
       $('.distill-site-header a[href]').each(function(i,val) {
-        $(this).attr('href', $(this).attr('href').replace("index.html", "./"));
+        $(this).attr('href', $(this).attr('href').replace(/^index[.]html/, "./"));
       });
     }
 
@@ -2037,7 +2074,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </script>
 
   <!--/radix_placeholder_distill-->
-  <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+  <script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
   <script src="site_libs/popper-2.6.0/popper.min.js"></script>
   <link href="site_libs/tippy-6.2.7/tippy.css" rel="stylesheet" />
   <link href="site_libs/tippy-6.2.7/tippy-light-border.css" rel="stylesheet" />
@@ -2098,159 +2135,42 @@ Johns Hopkins University</p></p>
 
 <div class="d-article">
 <h1 id="research-interests">Research Interests</h1>
-<h3 id="the-innate-immune-response-to-viral-infections">The Innate
-Immune Response to Viral Infections</h3>
-<p>The innate immune response is the body’s first defense against
-pathogens. My lab is interested in understanding how viruses activate
-and subvert this defensive system. We work in a large collaborative
-environment studying herpes simplex virus, cytomegalovirus, SARS-CoV-2,
-and influenza. Current areas of investigation include how these viruses
-activate inflammatory pathways, alter innate immune cell signaling, and
-interact with novel regulators of these pathways.</p>
+<h3 id="the-innate-immune-response-to-viral-infections">The Innate Immune Response to Viral Infections</h3>
+<p>The innate immune response is the body’s first defense against pathogens. My lab is interested in understanding how viruses activate and subvert this defensive system. We work in a large collaborative environment studying herpes simplex virus, cytomegalovirus, SARS-CoV-2, RSV, and influenza. Current areas of investigation include how these viruses activate inflammatory pathways, alter innate immune cell signaling, and interact with novel regulators of these pathways.</p>
 <figure>
 <img src="image/inflammasome.png" alt="Created in BioRender" />
 <figcaption aria-hidden="true">Created in BioRender</figcaption>
 </figure>
-<h3 id="vaccine-response-in-immunocompromised-hosts">Vaccine Response in
-Immunocompromised Hosts</h3>
-<p>Vaccines remain our best tool to prevent infection and disease.
-Unfortunately, people with immunocompromising conditions (bone marrow or
-organ transplant recipients) often do not respond as well as
-immunocompetent individuals to vaccines. This leaves them vulnerable to
-infection. My lab works with other investigators to understand the
-vaccine response in these immunocompromised patients and how we can
-improve that response to protect them from disease.</p>
-<h3 id="open-research-positions"><a href="**"><strong>Open Research
-Positions</strong></a></h3>
-<h1 id="transplantoncology-infectious-diseases">Transplant/Oncology
-Infectious Diseases</h1>
-<p>My primary clinical focus is on preventing and treating infections in
-immunocompromised patients. This includes bone marrow transplant
-recipients, solid organ transplant recipients, and patients undergoing
-chemotherapy treatment for cancer. I see patients at Johns Hopkins
-Hospital and affiliated clinics. I have a particular interest in novel
-treatments for viral infections in this population.</p>
+<h3 id="vaccine-response-in-immunocompromised-hosts">Vaccine Response in Immunocompromised Hosts</h3>
+<p>Vaccines remain our best tool to prevent infection and disease. Unfortunately, people with immunocompromising conditions (bone marrow or organ transplant recipients) often do not respond as well as immunocompetent individuals to vaccines. This leaves them vulnerable to infection. My lab works with other investigators to understand the vaccine response in these immunocompromised patients and how we can improve that response to protect them from disease.</p>
+<h3 id="open-research-positions"><a href="mailto:jquinn20@jhmi.edu"><strong>Open Research Positions</strong></a></h3>
+<h1 id="transplantoncology-infectious-diseases">Transplant/Oncology Infectious Diseases</h1>
+<p>My primary clinical focus is on preventing and treating infections in immunocompromised patients. This includes bone marrow transplant recipients, solid organ transplant recipients, and patients undergoing chemotherapy treatment for cancer. I see patients at Johns Hopkins Hospital and affiliated clinics. I have a particular interest in novel treatments for viral infections in this population.</p>
 <h1 id="selected-publications">Selected Publications</h1>
 <ul>
-<li><strong>Karaba AH</strong>, Zhou W, Li S, Aytenfisu TY, Johnston TS,
-Akinde O, et al. Impact of Seasonal Coronavirus Antibodies on SARS-CoV-2
-Vaccine Responses in Solid Organ Transplant Recipients. Clinical
-Infectious Diseases. 2022; ciac652. <a href="doi:10.1093/cid/ciac652"
-class="uri">doi:10.1093/cid/ciac652</a></li>
-<li>Kumar A, Stavrakis G, <strong>Karaba AH</strong>. Herpesviruses and
-Inflammasomes: One Sensor Does Not Fit All. Szpara ML, Prasad VR,
-editors. mBio. 2022; e01737-21. <a href="doi:10.1128/mbio.01737-21"
-class="uri">doi:10.1128/mbio.01737-21</a></li>
-<li><strong>Karaba AH</strong>, Zhu X, Benner SE, Akinde O, Eby Y, Wang
-KH, et al. Higher Proinflammatory Cytokines Are Associated With
-Increased Antibody Titer After a Third Dose of SARS-CoV-2 Vaccine in
-Solid Organ Transplant Recipients. Transplantation. 2022;106: 835–841.
-<a href="doi:10.1097/TP.0000000000004057"
-class="uri">doi:10.1097/TP.0000000000004057</a></li>
-<li><strong>Karaba AH</strong>, Zhu X, Liang T, Wang KH, Rittenhouse AG,
-Akinde O, et al. A Third Dose of SARS-CoV-2 Vaccine Increases
-Neutralizing Antibodies Against Variants of Concern in Solid Organ
-Transplant Recipients. American J Transplantation. 2022; ajt.16933. <a
-href="doi:10.1111/ajt.16933\"
-class="uri">doi:10.1111/ajt.16933\</a></li>
-<li>Ruddy JA, Boyarsky BJ, Bailey JR, <strong>Karaba AH</strong>,
-Garonzik-Wang JM, Segev DL, et al. Safety and antibody response to
-two-dose SARS-CoV-2 messenger RNA vaccination in persons with HIV. AIDS.
-2021. doi: 10.1097/QAD.0000000000003017</li>
-<li>Woldemeskel BA, <strong>Karaba AH</strong>, Garliss CC, Beck EJ,
-Wang KH, Laeyendecker O, et al. The BNT162b2 mRNA Vaccine Elicits Robust
-Humoral and Cellular Immune Responses in People Living with HIV.
-Clinical Infectious Diseases. 2021. <a href="doi:10.1093/cid/ciab648"
-class="uri">doi:10.1093/cid/ciab648</a></li>
-<li>Ruddy JA, Boyarsky BJ, Werbel WA, Bailey JR, <strong>Karaba
-AH</strong>, Garonzik-Wang JM, et al. Safety and antibody response to
-the first dose of SARS-CoV-2 messenger RNA vaccine in persons with HIV.
-AIDS. 2021. <a href="doi:10.1097/QAD.0000000000002945"
-class="uri">doi:10.1097/QAD.0000000000002945</a></li>
-<li><strong>Karaba AH</strong>, Figueroa A, Werbel WA, Dioverti MV,
-Steinke SM, Ray SC, et al. Interleukin-18 and tumor necrosis factor-α
-are elevated in solid organ transplant recipients with possible
-cytomegalovirus end-organ disease. Transplant Infectious Disease. 2021.
-<a href="doi:10.1111/tid.13682"
-class="uri">doi:10.1111/tid.13682</a></li>
-<li>Peart Akindele N, Kouo T, <strong>Karaba AH</strong>, Gordon O,
-Fenstermacher KZJ, Beaudry J, et al. Distinct Cytokine and Chemokine
-Dysregulation in Hospitalized Children with Acute COVID-19 and
-Multisystem Inflammatory Syndrome with Similar Levels of Nasopharyngeal
-SARS-CoV-2 Shedding. The Journal of Infectious Diseases. 2021. <a
-href="doi:10.1093/infdis/jiab285"
-class="uri">doi:10.1093/infdis/jiab285</a></li>
-<li><strong>Karaba AH</strong>, Zhou W, Hsieh LL, Figueroa A, Massaccesi
-G, Rothman RE, et al. Differential Cytokine Signatures of SARS-CoV-2 and
-Influenza Infection Highlight Key Differences in Pathobiology. Clinical
-Infectious Diseases. 2021. <a href="doi:10.1093/cid/ciab376"
-class="uri">doi:10.1093/cid/ciab376</a></li>
-<li>Ignatius EH, Wang K, <strong>Karaba AH</strong>, Robinson M, Avery
-RK, Blair P, et al. Tocilizumab for the Treatment of COVID-19 Among
-Hospitalized Patients: A Matched Retrospective Cohort Analysis. Open
-Forum Infectious Diseases. 2021;8. <a href="doi:10.1093/ofid/ofaa598"
-class="uri">doi:10.1093/ofid/ofaa598</a></li>
-<li>Gladstone DE, Kim BS, Mooney K, <strong>Karaba AH</strong>,
-D’Alessio FR. Regulatory T Cells for Treating Patients With COVID-19 and
-Acute Respiratory Distress Syndrome: Two Case Reports. Annals of
-Internal Medicine. 2020. <a href="doi:10.7326/L20-0681"
-class="uri">doi:10.7326/L20-0681</a></li>
-<li><strong>Karaba AH</strong>, Figueroa A, Massaccesi G, Botto S,
-DeFilippis VR, Cox AL. Herpes simplex virus type 1 inflammasome
-activation in proinflammatory human macrophages is dependent on NLRP3,
-ASC, and caspase-1. PLOS ONE. 2020;15: e0229570. <a
-href="doi:10.1371/journal.pone.0229570"
-class="uri">doi:10.1371/journal.pone.0229570</a></li>
-<li><strong>Karaba AH</strong>, Blair PW, Martin K, Saheed MO, Carroll
-KC, Borowitz MJ. The Effects of a Systemwide Diagnostic Stewardship
-Change on West Nile Virus Disease Ordering Practices. Open Forum Infect
-Dis. 2019;6. <a href="doi:10.1093/ofid/ofz488"
-class="uri">doi:10.1093/ofid/ofz488</a></li>
-<li><strong>Karaba AH</strong>, Cohen LK, Glaubach T, Kopp SJ, Reichek
-JL, Yoon HH, et al. Longitudinal Characterization of Herpes Simplex
-Virus (HSV) Isolates Acquired From Different Sites in an
-Immune-Compromised Child: A New HSV Thymidine Kinase Mutation Associated
-With Resistance. Journal of the Pediatric Infectious Diseases Society.
-2012. <a href="doi:10.1093/jpids/pis009"
-class="uri">doi:10.1093/jpids/pis009</a></li>
-<li>Edwards RG, Kopp SJ, <strong>Karaba AH</strong>, Wilcox DR,
-Longnecker R. Herpesvirus entry mediator on radiation-resistant cell
-lineages promotes ocular herpes simplex virus 1 pathogenesis in an
-entry-independent manner. mBio. 2015;6: e01532-15. <a
-href="doi:10.1128/mBio.01532-15"
-class="uri">doi:10.1128/mBio.01532-15</a></li>
-<li>Kopp SJ, <strong>Karaba AH</strong>, Cohen LK, Banisadr G, Miller
-RJ, Muller WJ. Pathogenesis of neonatal herpes simplex 2 disease in a
-mouse model is dependent on entry receptor expression and route of
-inoculation. Journal of Virology. 2012. <a
-href="doi:10.1128/JVI.01849-12"
-class="uri">doi:10.1128/JVI.01849-12</a></li>
-<li>Kopp SJ, Ranaivo HR, Wilcox DR, <strong>Karaba AH</strong>,
-Wainwright MS, Muller WJ. Herpes simplex virus serotype and entry
-receptor availability alter CNS disease in a mouse model of neonatal
-HSV. Pediatr Res. 2014;76: 528–534. <a href="doi:10.1038/pr.2014.135"
-class="uri">doi:10.1038/pr.2014.135</a></li>
-<li><strong>Karaba AH</strong>, Kopp SJ, Longnecker R. Herpesvirus entry
-mediator is a serotype specific determinant of pathogenesis in ocular
-herpes. Proc Natl Acad Sci USA. 2012. <a
-href="doi:10.1073/pnas.1216967109"
-class="uri">doi:10.1073/pnas.1216967109</a></li>
-<li><strong>Karaba AH</strong>, Kopp SJ, Longnecker R. Herpesvirus entry
-mediator and nectin-1 mediate herpes simplex virus 1 infection of the
-murine cornea. Journal of Virology. 2011;85: 10041–10047. <a
-href="doi:10.1128/JVI.05445-11"
-class="uri">doi:10.1128/JVI.05445-11</a></li>
+<li><strong>Karaba AH</strong>, Johnston TS, Beck E, Laeyendecker O, Cox AL, Klein SL, Sullivan DJ. Endemic Human Coronavirus Antibody Levels Are Unchanged after Convalescent or Control Plasma Transfusion for Early Outpatient COVID-19 Treatment. mBio. 2023:e03287-22. <a href="doi:10.1128/mbio.03287-22" class="uri">doi:10.1128/mbio.03287-22</a></li>
+<li><strong>Karaba AH</strong>, Kim JD, Chiang TPY, Alejo JL, et al. Neutralizing activity and 3-month durability of tixagevimab and cilgavimab prophylaxis against Omicron sublineages in transplant recipients. American Journal of Transplantation. 2023; <a href="doi:10.1016/j.ajt.2022.11.002" class="uri">doi:10.1016/j.ajt.2022.11.002</a></li>
+<li><strong>Karaba AH</strong>, Zhou W, Li S, Aytenfisu TY, Johnston TS, Akinde O, et al. Impact of Seasonal Coronavirus Antibodies on SARS-CoV-2 Vaccine Responses in Solid Organ Transplant Recipients. Clinical Infectious Diseases. 2022; ciac652. <a href="doi:10.1093/cid/ciac652" class="uri">doi:10.1093/cid/ciac652</a></li>
+<li>Kumar A, Stavrakis G, <strong>Karaba AH</strong>. Herpesviruses and Inflammasomes: One Sensor Does Not Fit All. Szpara ML, Prasad VR, editors. mBio. 2022; e01737-21. <a href="doi:10.1128/mbio.01737-21" class="uri">doi:10.1128/mbio.01737-21</a></li>
+<li><strong>Karaba AH</strong>, Zhu X, Benner SE, Akinde O, Eby Y, Wang KH, et al. Higher Proinflammatory Cytokines Are Associated With Increased Antibody Titer After a Third Dose of SARS-CoV-2 Vaccine in Solid Organ Transplant Recipients. Transplantation. 2022;106: 835–841. <a href="doi:10.1097/TP.0000000000004057" class="uri">doi:10.1097/TP.0000000000004057</a></li>
+<li><strong>Karaba AH</strong>, Zhu X, Liang T, Wang KH, Rittenhouse AG, Akinde O, et al. A Third Dose of SARS-CoV-2 Vaccine Increases Neutralizing Antibodies Against Variants of Concern in Solid Organ Transplant Recipients. American J Transplantation. 2022; ajt.16933. <a href="doi:10.1111/ajt.16933\" class="uri">doi:10.1111/ajt.16933\</a></li>
+<li><strong>Karaba AH</strong>, Figueroa A, Werbel WA, Dioverti MV, Steinke SM, Ray SC, et al. Interleukin-18 and tumor necrosis factor-α are elevated in solid organ transplant recipients with possible cytomegalovirus end-organ disease. Transplant Infectious Disease. 2021. <a href="doi:10.1111/tid.13682" class="uri">doi:10.1111/tid.13682</a></li>
+<li>Peart Akindele N, Kouo T, <strong>Karaba AH</strong>, Gordon O, Fenstermacher KZJ, Beaudry J, et al. Distinct Cytokine and Chemokine Dysregulation in Hospitalized Children with Acute COVID-19 and Multisystem Inflammatory Syndrome with Similar Levels of Nasopharyngeal SARS-CoV-2 Shedding. The Journal of Infectious Diseases. 2021. <a href="doi:10.1093/infdis/jiab285" class="uri">doi:10.1093/infdis/jiab285</a></li>
+<li><strong>Karaba AH</strong>, Zhou W, Hsieh LL, Figueroa A, Massaccesi G, Rothman RE, et al. Differential Cytokine Signatures of SARS-CoV-2 and Influenza Infection Highlight Key Differences in Pathobiology. Clinical Infectious Diseases. 2021. <a href="doi:10.1093/cid/ciab376" class="uri">doi:10.1093/cid/ciab376</a></li>
+<li>Ignatius EH, Wang K, <strong>Karaba AH</strong>, Robinson M, Avery RK, Blair P, et al. Tocilizumab for the Treatment of COVID-19 Among Hospitalized Patients: A Matched Retrospective Cohort Analysis. Open Forum Infectious Diseases. 2021;8. <a href="doi:10.1093/ofid/ofaa598" class="uri">doi:10.1093/ofid/ofaa598</a></li>
+<li>Gladstone DE, Kim BS, Mooney K, <strong>Karaba AH</strong>, D’Alessio FR. Regulatory T Cells for Treating Patients With COVID-19 and Acute Respiratory Distress Syndrome: Two Case Reports. Annals of Internal Medicine. 2020. <a href="doi:10.7326/L20-0681" class="uri">doi:10.7326/L20-0681</a></li>
+<li><strong>Karaba AH</strong>, Figueroa A, Massaccesi G, Botto S, DeFilippis VR, Cox AL. Herpes simplex virus type 1 inflammasome activation in proinflammatory human macrophages is dependent on NLRP3, ASC, and caspase-1. PLOS ONE. 2020;15: e0229570. <a href="doi:10.1371/journal.pone.0229570" class="uri">doi:10.1371/journal.pone.0229570</a></li>
+<li><strong>Karaba AH</strong>, Blair PW, Martin K, Saheed MO, Carroll KC, Borowitz MJ. The Effects of a Systemwide Diagnostic Stewardship Change on West Nile Virus Disease Ordering Practices. Open Forum Infect Dis. 2019;6. <a href="doi:10.1093/ofid/ofz488" class="uri">doi:10.1093/ofid/ofz488</a></li>
+<li><strong>Karaba AH</strong>, Cohen LK, Glaubach T, Kopp SJ, Reichek JL, Yoon HH, et al. Longitudinal Characterization of Herpes Simplex Virus (HSV) Isolates Acquired From Different Sites in an Immune-Compromised Child: A New HSV Thymidine Kinase Mutation Associated With Resistance. Journal of the Pediatric Infectious Diseases Society. 2012. <a href="doi:10.1093/jpids/pis009" class="uri">doi:10.1093/jpids/pis009</a></li>
+<li><strong>Karaba AH</strong>, Kopp SJ, Longnecker R. Herpesvirus entry mediator is a serotype specific determinant of pathogenesis in ocular herpes. Proc Natl Acad Sci USA. 2012. <a href="doi:10.1073/pnas.1216967109" class="uri">doi:10.1073/pnas.1216967109</a></li>
+<li><strong>Karaba AH</strong>, Kopp SJ, Longnecker R. Herpesvirus entry mediator and nectin-1 mediate herpes simplex virus 1 infection of the murine cornea. Journal of Virology. 2011;85: 10041–10047. <a href="doi:10.1128/JVI.05445-11" class="uri">doi:10.1128/JVI.05445-11</a></li>
 </ul>
-<p><a
-href="https://www.ncbi.nlm.nih.gov/myncbi/andrew.karaba.1/bibliography/public/">Complete
-Bibliography</a></p>
+<p><a href="https://www.ncbi.nlm.nih.gov/myncbi/andrew.karaba.1/bibliography/public/">Complete Bibliography</a></p>
 <hr />
-<p><font size="2"> © 2022 all rights reserved.<br> This website was made
-using the Distill package in R.<br> Learn more about using Distill for R
-Markdown at <a href="https://rstudio.github.io/distill"
-class="uri">https://rstudio.github.io/distill</a></font></p>
-<div class="sourceCode" id="cb1"><pre
-class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p><font size="2"> © 2022 all rights reserved.<br>
+This website was made using the Distill package in R.<br>
+Learn more about using Distill for R Markdown at <a href="https://rstudio.github.io/distill" class="uri">https://rstudio.github.io/distill</a></font></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

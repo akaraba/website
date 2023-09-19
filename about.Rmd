@@ -14,7 +14,7 @@ output:
   postcards::trestles
 ---
 
-I am a practicing physician scientist at Johns Hopkins studying the immune response to viruses and taking care of immunocompromised patients as part of the transplant/oncology infectious disease team. When not in the lab or hospital I am probably brewing beer, birding, cooking, or playing outside with my sons and wife.
+I am a practicing physician scientist at Johns Hopkins studying the immune response to viruses and taking care of immunocompromised patients as part of the transplant/oncology infectious disease team. When not in the lab or hospital I am probably brewing beer, birding, cooking, or playing outside with my family.
 
 **Current Lab Members:**\
 Bryce Easterly -- Research Technologist

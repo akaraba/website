@@ -56,6 +56,6 @@ Vaccines remain our best tool to prevent infection and disease.  Unfortunately, 
 [Complete Bibliography](https://www.ncbi.nlm.nih.gov/myncbi/andrew.karaba.1/bibliography/public/)
 
 -----------------------------------------------
-<font size="2"> © 2022 all rights reserved.<br>
+<font size="2"> © 2023 all rights reserved.<br>
 This website was made using the Distill package in R.<br>
 Learn more about using Distill for R Markdown at <https://rstudio.github.io/distill></font>

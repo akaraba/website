@@ -2,7 +2,9 @@
 title: "Andrew H. Karaba M.D. Ph.D."
 description: |
   Assistant Professor of Medicine  
-  Division of Infectious Diseases  
+  Division of Infectious Diseases
+  Associate Director of Basic/Translational Research
+  Transplant Research Center  
   Johns Hopkins University
 site: distill::distill_website
 ---
@@ -33,6 +35,7 @@ Vaccines remain our best tool to prevent infection and disease.  Unfortunately, 
   My primary clinical focus is on preventing and treating infections in immunocompromised patients.  This includes bone marrow transplant recipients, solid organ transplant recipients, and patients undergoing chemotherapy treatment for cancer.  I see patients at Johns Hopkins Hospital and affiliated clinics.  I have a particular interest in novel treatments for viral infections in this population.
       
 # Selected Publications
+- **Karaba AH**, Morgenlander WR, Johnston TS, Hage C, Pekosz A, Durand CM, Segev DL, et al. Epitope Mapping of SARS-CoV-2 Spike Antibodies in Vaccinated Kidney Transplant Recipients Reveals Poor Spike Coverage Compared to Healthy Controls. The Journal of Infectious Diseases. 2023, jiad534. https://doi.org/10.1093/infdis/jiad534.
 - **Karaba AH**, Johnston TS, Beck E, Laeyendecker O, Cox AL, Klein SL, Sullivan DJ. Endemic Human Coronavirus Antibody Levels Are Unchanged after Convalescent or Control Plasma Transfusion for Early Outpatient COVID-19 Treatment. mBio. 2023:e03287-22. doi:10.1128/mbio.03287-22
 - **Karaba AH**, Kim JD, Chiang TPY, Alejo JL, et al. Neutralizing activity and 3-month durability of tixagevimab and cilgavimab prophylaxis against Omicron sublineages in transplant recipients. American Journal of Transplantation. 2023; doi:10.1016/j.ajt.2022.11.002
 - **Karaba AH**, Zhou W, Li S, Aytenfisu TY, Johnston TS, Akinde O, et al. Impact of Seasonal Coronavirus Antibodies on SARS-CoV-2 Vaccine Responses in Solid Organ Transplant Recipients. Clinical Infectious Diseases. 2022; ciac652. doi:10.1093/cid/ciac652

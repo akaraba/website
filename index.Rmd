@@ -1,10 +1,10 @@
 ---
 title: "Andrew H. Karaba M.D. Ph.D."
 description: |
-  Assistant Professor of Medicine  
-  Division of Infectious Diseases
-  Associate Director of Basic/Translational Research
-  Transplant Research Center  
+  Assistant Professor of Medicine    
+  Division of Infectious Diseases  
+  Associate Director of Basic/Translational Research  
+  Transplant Research Center   
   Johns Hopkins University
 site: distill::distill_website
 ---
@@ -21,18 +21,18 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ### The Innate Immune Response to Viral Infections
 
-The innate immune response is the body’s first defense against pathogens.  My lab is interested in understanding how viruses activate and subvert this defensive system.  We work in a large collaborative environment studying herpes simplex virus, cytomegalovirus, SARS-CoV-2, RSV, and influenza.  Current areas of investigation include how these viruses activate inflammatory pathways, alter innate immune cell signaling, and interact with novel regulators of these pathways.
+The innate immune response is the body’s first defense against pathogens.  My lab is interested in understanding how viruses activate and subvert this defensive system.  We work in a large collaborative environment studying herpes simplex virus, cytomegalovirus, SARS-CoV-2, RSV, and influenza.  Current areas of investigation include how these viruses activate inflammatory pathways, alter innate immune cell signaling, and interact with novel regulators of inflammation.
 
  ![Created in BioRender](image/inflammasome.png)
 
-### Vaccine Response in Immunocompromised Hosts
+### Vaccine Response in Immunosuppressed Hosts
 
-Vaccines remain our best tool to prevent infection and disease.  Unfortunately, people with immunocompromising conditions (bone marrow or organ transplant recipients) often do not respond as well as immunocompetent individuals to vaccines.  This leaves them vulnerable to infection. My lab works with other investigators to understand the vaccine response in these immunocompromised patients and how we can improve that response to protect them from disease.
+Vaccines remain our best tool to prevent infection and disease.  Unfortunately, people with immunocompromising conditions (bone marrow or organ transplant recipients) often do not respond as well as immunocompetent individuals to vaccines.  This leaves them vulnerable to infection. My lab works with other investigators to understand the vaccine response in these immunosuppressed patients and how we can improve that response to protect them from disease.
 
 ### [**Open Research Positions**](mailto:jskinne8@jhmi.edu)
       
 # Transplant/Oncology Infectious Diseases
-  My primary clinical focus is on preventing and treating infections in immunocompromised patients.  This includes bone marrow transplant recipients, solid organ transplant recipients, and patients undergoing chemotherapy treatment for cancer.  I see patients at Johns Hopkins Hospital and affiliated clinics.  I have a particular interest in novel treatments for viral infections in this population.
+  My primary clinical focus is on preventing and treating infections in immunosuppressed patients.  This includes bone marrow transplant recipients, solid organ transplant recipients, and patients undergoing chemotherapy treatment for cancer.  I see patients at Johns Hopkins Hospital and affiliated clinics.  I have a particular interest in novel treatments for viral infections in this population.
       
 # Selected Publications
 - **Karaba AH**, Hage C, Sengsouk I, Balasubramanian P, Segev DL, Tobian AAAR, Werbel WA. Antibody Response to Respiratory Syncytial Virus Vaccination in Immunocompromised Persons. JAMA. 2024. doi:10.1001/jama.2024.25395.
@@ -50,6 +50,6 @@ Vaccines remain our best tool to prevent infection and disease.  Unfortunately, 
 [Complete Bibliography](https://www.ncbi.nlm.nih.gov/myncbi/andrew.karaba.1/bibliography/public/)
 
 -----------------------------------------------
-<font size="2"> © 2023 all rights reserved.<br>
+<font size="2"> © 2025 all rights reserved.<br>
 This website was made using the Distill package in R.<br>
 Learn more about using Distill for R Markdown at <https://rstudio.github.io/distill></font>
